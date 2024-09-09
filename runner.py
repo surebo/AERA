@@ -25,7 +25,6 @@ class Runner:
         self.win_rates = []
         self.episode_rewards = []
 
-        # 用来保存plt和pkl
         self.save_path = self.args.result_dir + '/' + \
             args.alg + '/' + str(args.alpha) + '/' + args.map
         if not os.path.exists(self.save_path):
@@ -34,9 +33,9 @@ class Runner:
         self.buffer = ReplayBuffer(self.args)
     def run(self, num):
         """
-        DESCRIPT: 运行num次游戏
+        DESCRIPT: num 
 
-        @param:  num -运行次数
+        @param:  num 
         @return: None    
         """
         time_steps, train_steps, evaluate_steps = 0, 0, -1
@@ -51,14 +50,14 @@ class Runner:
                 self.plt(num)
                 evaluate_steps += 1
             episodes = []
-            # 收集self.args.n_episodes个episodes
+            
             for episode_idx in range(self.args.n_episodes):
                 episode, _, _, steps = self.rolloutWorker.generate_episode(
                     episode_idx)
                 episodes.append(episode)
                 time_steps += steps
                 # print(_)
-            # episode的每一项都是一个(1, episode_len, n_agents, 具体维度)四维数组，下面要把所有episode的的obs拼在一起
+           
             episode_batch = episodes[0]
             episodes.pop(0)
             for episode in episodes:
