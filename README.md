@@ -17,11 +17,11 @@
 ## Quick Start
 
 ```shell
-$ python main.py --alg=qmix --map=8m --replay_alg=aera --result_dir='result' 
+$ python main.py --alg=qmix --map=8m --replay_alg=aeras --result_dir='result' 
 ```
 
 ```shell
-$ python main.py --alg=qmix --map=academy_3_vs_1_with_keeper --replay_alg=aera --result_dir='result' 
+$ python main.py --alg=qmix --map=academy_3_vs_1_with_keeper --replay_alg=aeras --result_dir='result' 
 ```
 
 ## Replay
